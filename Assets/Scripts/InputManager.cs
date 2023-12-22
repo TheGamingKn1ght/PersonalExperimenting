@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public playerMovement playMove;
 
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        playMove.directionalInput();
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             //movement
         }
@@ -18,8 +21,9 @@ public class InputManager : MonoBehaviour
             //Jump
         }
 
-       
         
+
+
 
 
 
