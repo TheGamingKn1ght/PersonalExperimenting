@@ -9,12 +9,9 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //player movement
         playMove.directionalInput();
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            //movement
-        }
 
         if (Input.GetKey(KeyCode.Space))
         {
