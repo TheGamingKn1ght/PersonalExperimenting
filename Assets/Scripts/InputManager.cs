@@ -13,9 +13,9 @@ public class InputManager : MonoBehaviour
         playMove.directionalInput();
 
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && playMove.isGrounded)
         {
-            //Jump
+            playMove.jump();
         }
 
         
