@@ -11,6 +11,7 @@ public class playerMovement : MonoBehaviour
     //Movement variables
     private float x, z;
     public float speed = 12;
+    public float airSpeed = 6;
 
     //GroundCheck Variables
     public float groundDistance = 0.4f;
@@ -31,9 +32,19 @@ public class playerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        //Control player movement
-        Vector3 move = (transform.right * x) + (transform.forward * z);
-        controller.Move(move * speed * Time.deltaTime);
+        if (isGrounded)
+        {
+            //Control player movement
+            Vector3 move = (transform.right * x) + (transform.forward * z);
+            controller.Move(move * speed * Time.deltaTime);
+        }
+        else
+        {
+            //Control player air movement
+            Vector3 move = (transform.right * x) + (transform.forward * z);
+            controller.Move(move * airSpeed * Time.deltaTime);
+        }
+        
 
         //Apply gravity to the player
         velocity.y += gravity * Time.deltaTime;
@@ -48,6 +59,7 @@ public class playerMovement : MonoBehaviour
 
     public void jump()
     {
+        //Kinetic Energy + Potential Energy formulas together
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
     }
 }
