@@ -10,6 +10,7 @@ public class playerMovement : MonoBehaviour
 
     //Movement variables
     private float x, z;
+    public float maxSpeed = 16; //Need to try and limit diagonal running
     public float speed = 12;
     public float airSpeed = 6;
 
