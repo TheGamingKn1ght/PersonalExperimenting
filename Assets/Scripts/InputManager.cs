@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //player movement
+        //player movement updated every frame
         playMove.directionalInput();
 
         if (Input.GetKey(KeyCode.Space) && playMove.isGrounded)
@@ -20,14 +20,22 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             playMove.speed = 16;
-            playMove.airSpeed = 12;
+            playMove.airSpeed = 16;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             playMove.speed = 12;
-            playMove.airSpeed = 6;
+            playMove.airSpeed = 12;
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            playMove.StartCrouching();
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            playMove.StopCrouching();
+        }
 
 
 
