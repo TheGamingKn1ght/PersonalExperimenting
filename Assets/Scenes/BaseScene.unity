@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 123947526}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.246908, y: -1.8711746, z: -6.0915866}
+  m_LocalPosition: {x: -13.246908, y: -1.8711746, z: -6.282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1226,6 +1226,7 @@ GameObject:
   - component: {fileID: 2113656894}
   - component: {fileID: 2113656897}
   - component: {fileID: 2113656898}
+  - component: {fileID: 2113656899}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1323,7 +1324,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.7
+  m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -1342,6 +1343,7 @@ MonoBehaviour:
   controller: {fileID: 2113656897}
   groundCheck: {fileID: 342732856}
   jumpHeight: 1.5
+  maxSpeed: 16
   speed: 12
   airSpeed: 6
   groundDistance: 0.4
@@ -1350,6 +1352,29 @@ MonoBehaviour:
     m_Bits: 8
   isGrounded: 0
   gravity: -19.62
+--- !u!136 &2113656899
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113656892}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
             playMove.jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.W))
         {
             playMove.speed = 16;
             playMove.airSpeed = 16;
